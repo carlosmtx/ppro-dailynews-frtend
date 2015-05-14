@@ -1,0 +1,71 @@
+.container{
+  height: 100%;
+}
+.center-page-align{
+  margin-top: 5%;
+}
+body{
+  min-height: 100vh;
+}
+
+.news-collection{
+  .card{
+    height: 190px;
+  }
+  .card-action{
+    height: 62px;
+    position:absolute;
+    bottom: 0;
+  }
+  .card-image{
+    height: 72px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+  }
+  #add-source{
+    position:relative;
+    right: 0;
+  }
+}
+
+.animation{
+  animation
+}
+.animation.scaleHover{
+
+}
+.animation.scaleHover:hover{
+  transform: scale(1.1);
+}
+.news-collection{
+  .card-panel{
+    margin: 0;
+    box-shadow: none;
+  }
+  .card-panel:hover{
+  }
+  .collapsible-header span{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+}
+
+
+
+.animation {
+  -webkit-transition: 1s;
+}
+.animation.ng-enter {
+  opacity: 0;
+}
+.animation.ng-leave {
+  opacity: 1;
+}
+.animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}

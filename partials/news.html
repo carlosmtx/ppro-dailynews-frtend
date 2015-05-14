@@ -1,0 +1,34 @@
+<script>
+
+    $(document).ready(function(){
+        $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+    });
+</script>
+
+
+
+<div ng-controller="NewsCtrl" class="news">
+    <ul class="collapsible popout" data-collapsible="accordion">
+        <li ng-repeat="(key,new) in news" end-repeat="collapsible();">
+            <div class="collapsible-header"><i class="mdi-image-filter-{{key+1}}"></i><span>{{new.title}}</span></div>
+            <div class="collapsible-body">
+                <div class="card-panel">
+                    <div class="row valign-wrapper">
+                        <div class="col s2" ng-if="new.img">
+                            <img class="responsive-img" src="{{new.img}}">
+                        </div>
+                        <div class="col s10">
+                        <span class="black-text">
+                           {{ new.description }}
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
