@@ -52,5 +52,22 @@ newsAppController.controller('NewsCtrl', ['$scope','AuthService',
             });
             return 5;
         }
+		
+		$scope.init = function () {			
+			var request = $.get("http://api.dailynews.io/user/"+$scope.user.username+"/news");
+			
+			request.done(function(xhr,result){
+				console.log("GET news to insert");
+				console.log(xhr[0]);
+				xhr.forEach(function(entry){
+					
+				});
+			});
+			
+			request.error(function(jqXHR, textStatus, errorThrown) {
+				console.log("GET news error: "+JSON.stringify(jqXHR)+" "+textStatus+" "+errorThrown );
+			});
+		};
+		
     }
 ]);

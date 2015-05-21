@@ -53,18 +53,44 @@ newsAppController.controller('HomeCtrl', ['$scope','$routeParams',
         $scope.user.username = $routeParams.username;
         $scope.sources = sources;
 
+		$scope.init = function () {			
+			var request = $.get("http://api.dailynews.io/user/"+$scope.user.username+"/source");
+			
+			request.done(function(xhr,result){
+				console.log("GET srcs to insert");
+				console.log(xhr[0]);
+				xhr.forEach(function(entry){
+					//entry.title;
+					//entry.feed;
+					//entry.link;
+					//entry.LastUpdated;
+				});
+			});
+			
+			request.error(function(jqXHR, textStatus, errorThrown) {
+				console.log("GET src error: "+JSON.stringify(jqXHR)+" "+textStatus+" "+errorThrown );
+			});
+		};
+		
         $scope.openSourceModal = function(){
             $scope.newSource = "";
             $("#new-source-modal").openModal();
         };
         $scope.createSource = function(){
             console.log($scope.newSource);
-            $scope.sources.push({
-                title: 'Novo',
-                descrition: 'Description',
-                img : 'http://material-design.storage.googleapis.com/publish/material_v_3/material_ext_publish/0Bx4BSt6jniD7VG9DQVluOFJ4Tnc/materialdesign_principles_metaphor.png',
-                homepage: $scope.newSource
-            });
+
+			var request = $.post("http://api.dailynews.io/user/"+$scope.user.username+"/source", {source: $scope.newSource});
+
+			request.done(function(xhr, result) {
+				console.log("Add src success");
+				console.log(xhr);
+				console.log(result);
+			});
+			
+			request.error(function(jqXHR, textStatus, errorThrown) {
+				console.log("Add src error: "+JSON.stringify(jqXHR)+" "+textStatus+" "+errorThrown );
+			});
+			
             $("#new-source-modal").closeModal();
         };
     }
