@@ -11,14 +11,15 @@
 
     <script                type="text/javascript"  src ="public/vendor/angular/angular.min.js"></script>
     <script                type="text/javascript"  src ="public/vendor/angular-route/angular-route.min.js"></script>
-    <script                type="text/javascript"  src ="public/vendor/angular-animate/angular-animate.min.js"></script>
+    <!-- Configs-->
+    <script                type="text/javascript"  src="public/js/configs/Config.js"></script>
     <!-- Custom Directives -->
     <script                type="text/javascript"  src="public/js/directives/Directive.js"></script>
     <script                type="text/javascript"  src="public/js/directives/EndRepeat.js"></script>
 
     <!-- Custom Services -->
-    <script                type="text/javascript"  src="public/js/services/service.js"></script>
     <script                type="text/javascript"  src="public/js/services/auth.js"></script>
+
     <!-- Controllers -->
 
     <script                type="text/javascript"  src="public/js/controllers/Ctrl.js"></script>
@@ -26,6 +27,7 @@
     <script                type="text/javascript"  src="public/js/controllers/LoginCtrl.js"></script>
     <script                type="text/javascript"  src="public/js/controllers/NewsCtrl.js"></script>
     <script                type="text/javascript"  src="public/js/controllers/HeaderCtrl.js"></script>
+    <script                type="text/javascript"  src="public/js/controllers/ErrorCtrl.js"></script>
     <script                type="text/javascript"  src="public/js/app.js"></script>
 
 
@@ -37,7 +39,7 @@
 <div ng-controller="HeaderCtrl" class="navbar-fixed">
     <nav class="teal">
         <div class="nav-wrapper">
-            <a href="#/user/{{ user.username }}" class="brand-logo"><img height="62px" width="62px" src="http://i.imgur.com/kpOEI1j.png"/></a>
+            <a href="#/user/{{ user.username }}" ng-model="username" class="brand-logo"><img height="62px" width="62px" src="http://i.imgur.com/kpOEI1j.png"/></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#/user/{{ user.username }}/news">News</a></li>
                 <li><a href="#/user/{{ user.username }}/">Sources</a></li>
