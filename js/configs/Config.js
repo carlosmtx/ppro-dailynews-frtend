@@ -20,6 +20,14 @@ newsApp.factory('config', function() {
                     return apiBase+("/user/:username/news".replace(/:username/,username));
                 }
             }
+        },
+        events:{
+            flash : {
+                push: 'dailynews:flash_message:push'
+            }
+        },
+        timeout:{
+            flash: 2000
         }
     };
 

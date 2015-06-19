@@ -9,7 +9,7 @@
 
 
 
-<div ng-controller="NewsCtrl" class="news" ng-init="init()">
+<div class="news">
     <ul class="collapsible popout" data-collapsible="accordion">
         <li ng-repeat="(key,new) in news" end-repeat="collapsible();">
             <div class="collapsible-header"><i class="mdi-image-filter-{{key+1}}"></i><span>{{new.title}}</span></div>

@@ -18,7 +18,8 @@
     <script                type="text/javascript"  src="public/js/directives/EndRepeat.js"></script>
 
     <!-- Custom Services -->
-    <script                type="text/javascript"  src="public/js/services/auth.js"></script>
+    <script                type="text/javascript"  src="public/js/services/service.js"></script>
+    <script                type="text/javascript"  src="public/js/services/flash.js"></script>
 
     <!-- Controllers -->
 
@@ -36,18 +37,7 @@
 
 </head>
 <body >
-<div ng-controller="HeaderCtrl" class="navbar-fixed">
-    <nav class="teal">
-        <div class="nav-wrapper">
-            <a href="#/user/{{ user.username }}" ng-model="username" class="brand-logo"><img height="62px" width="62px" src="http://i.imgur.com/kpOEI1j.png"/></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#/user/{{ user.username }}/news">News</a></li>
-                <li><a href="#/user/{{ user.username }}/">Sources</a></li>
-                <li><a href="#/">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+<div ng-include="'partials/navbar.html'"></div>
 
 <div class="container">
     <div ng-view class="view-frame"></div>

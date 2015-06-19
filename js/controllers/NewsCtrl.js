@@ -41,17 +41,16 @@ var news = [
 
 var newsAppController = angular.module('angularControllers');
 
-newsAppController.controller('NewsCtrl', ['$scope','AuthService',
-    function($scope,AuthService){
+newsAppController.controller('NewsCtrl', ['$scope',
+    function($scope){
         $scope.news = news;
-        $scope.username = AuthService.login();
         $scope.collapsible = function(){
             console.log("Here11");
             $('.collapsible').collapsible({
                 accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
             });
             return 5;
-        }
+        };
 		
 		$scope.init = function () {			
 			var request = $.get("http://api.dailynews.io/user/"+$scope.user.username+"/news");
