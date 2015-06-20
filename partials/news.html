@@ -8,7 +8,7 @@
 
                 ng-click="setCurrent(newsEntry,$index)"
                 >
-            {{ newsEntry.date| date : 'yyyy/MM/dd HH:MM' }}
+            {{ newsEntry.date * 1000| date : 'yyyy-MM-dd '}}
         </li>
     </ul>
     <h3>Daily News</h3>
