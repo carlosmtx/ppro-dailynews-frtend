@@ -14,7 +14,9 @@ function($scope,$routeParams,$http,config,flash){
     }).success(function(data){
         console.log(data);
         $scope.newsEntrys = data;
-        $scope.currentNews= data[1];
+        $scope.currentNews= data[0];
+        $scope.selectedIndex = 0;
+
     }).error(function(){
         console.log("error");
     });
@@ -28,6 +30,7 @@ function($scope,$routeParams,$http,config,flash){
 
     $scope.setCurrent = function(current,index){
         $scope.currentNews = current;
+        console.log("Index"+index);
         $scope.selectedIndex = index;
     }
 
