@@ -30,7 +30,7 @@ newsAppController.controller('HomeCtrl', ['$scope','$routeParams','$http', 'conf
         };
 
         $scope.openSourceModal = function(){
-            $scope.newSource = {};
+            $scope.newSource = "";
             $("#new-source-modal").openModal();
         };
 
