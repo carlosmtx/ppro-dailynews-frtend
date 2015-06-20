@@ -69,7 +69,9 @@ body{
     display: none !important;
   }
 }
-
+.new.card-panel{
+  box-shadow: none;
+}
 .animation{
 
 }
@@ -95,7 +97,14 @@ body{
 }
 
 
-
+.news{
+  .collection{
+    width: 175px;
+  }
+  .collection-item{
+    cursor:hand;
+  }
+}
 .animation {
   -webkit-transition: 1s;
 }

@@ -21,6 +21,13 @@ newsApp.config(function ($httpProvider) {
     };
 
 });
+
+newsApp.config(function($sceProvider) {
+    // Completely disable SCE.  For demonstration purposes only!
+    // Do not use in new projects.
+    $sceProvider.enabled(false);
+});
+
 newsApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
@@ -42,3 +49,4 @@ newsApp.config(['$routeProvider',
                 redirectTo  : '/error'
             });
     }]);
+
